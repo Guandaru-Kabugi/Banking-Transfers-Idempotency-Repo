@@ -14,4 +14,5 @@ public class AccountsResponseDTO {
   private BigDecimal balance;
   private AccountStatus status;
   private Instant createdAt;
+  private Long version;
 }

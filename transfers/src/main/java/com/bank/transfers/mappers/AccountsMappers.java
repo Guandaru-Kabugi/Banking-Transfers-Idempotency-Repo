@@ -17,8 +17,9 @@ public class AccountsMappers {
     accountsResponseDTO.setId(accounts.getId());
     accountsResponseDTO.setStatus(accounts.getStatus());
     accountsResponseDTO.setBalance(accounts.getBalance());
-    accountsResponseDTO.setAccountOwner(accountsResponseDTO.getAccountOwner());
+    accountsResponseDTO.setAccountOwner(accounts.getOwnerName());
     accountsResponseDTO.setCreatedAt(accounts.getCreatedAt());
+    accountsResponseDTO.setVersion(accounts.getVersion());
     return accountsResponseDTO;
   }
 }
