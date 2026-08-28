@@ -23,4 +23,9 @@ public class GlobalExceptionHandler {
     return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
   }
 
+  @ExceptionHandler(IdempotencyConflictException.class)
+  public ResponseEntity<String> handleIdempotencyKeyConflict(IdempotencyConflictException ex){
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+  }
+
 }
