@@ -14,5 +14,6 @@ public class TransferResponseDTO {
   private String toAccountNumber;
   private BigDecimal amount;
   private TransferStatus status;
+  private String failureReason;
   private Instant createdAt;
 }

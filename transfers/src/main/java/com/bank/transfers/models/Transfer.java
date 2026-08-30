@@ -36,6 +36,7 @@ public class Transfer {
     private String failureReason;
 
     private Instant createdAt;
+    private Instant completedAt;
     private Instant updatedAt;
 
 

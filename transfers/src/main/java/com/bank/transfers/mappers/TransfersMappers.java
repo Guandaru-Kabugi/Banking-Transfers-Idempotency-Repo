@@ -6,10 +6,12 @@ import com.bank.transfers.models.Transfer;
 
 public class TransfersMappers {
 
-  public static void toEntity(TransferRequestDTO transferRequestDTO, Transfer transfer) {
+  public static Transfer toEntity(TransferRequestDTO transferRequestDTO, Transfer transfer) {
     transfer.setAmount(transferRequestDTO.getAmount());
     transfer.setFromAccountNumber(transferRequestDTO.getFromAccountNumber());
     transfer.setToAccountNumber(transferRequestDTO.getToAccountNumber());
+    transfer.setAmount(transferRequestDTO.getAmount());
+    return transfer;
   }
   public static TransferResponseDTO toDTO(Transfer transfer) {
     TransferResponseDTO transferResponseDTO = new TransferResponseDTO();
@@ -19,6 +21,7 @@ public class TransfersMappers {
     transferResponseDTO.setToAccountNumber(transfer.getToAccountNumber());
     transferResponseDTO.setStatus(transfer.getStatus());
     transferResponseDTO.setCreatedAt(transfer.getCreatedAt());
+    transferResponseDTO.setFailureReason(transfer.getFailureReason());
     return transferResponseDTO;
   }
 

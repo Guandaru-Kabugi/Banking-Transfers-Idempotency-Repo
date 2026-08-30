@@ -23,9 +23,25 @@ public class GlobalExceptionHandler {
     return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
   }
 
+  @ExceptionHandler(InsufficientFundsException.class)
+  public ResponseEntity<String> handleInsufficientFundsException(InsufficientFundsException ex){
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+  }
   @ExceptionHandler(IdempotencyConflictException.class)
   public ResponseEntity<String> handleIdempotencyKeyConflict(IdempotencyConflictException ex){
     return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+  }
+  @ExceptionHandler(SameAccountTransferException.class)
+  public ResponseEntity<String> handleSameAccountTransferException(SameAccountTransferException ex){
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+  }
+  @ExceptionHandler(InactiveAccountException.class)
+  public ResponseEntity<String> handleInactiveAccountException(InactiveAccountException ex){
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+  }
+  @ExceptionHandler(TransferNotFoundException.class)
+  public ResponseEntity<String> handleTransferNotFoundException(TransferNotFoundException ex){
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
   }
 
 }
