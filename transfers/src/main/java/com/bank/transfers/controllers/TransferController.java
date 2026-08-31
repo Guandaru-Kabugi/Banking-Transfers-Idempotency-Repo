@@ -22,7 +22,7 @@ public class TransferController {
 
   private final TransfersInterface transfersInterface;
 
-  @PostMapping
+  @PostMapping("/transfer")
   public ResponseEntity<TransferResponseDTO> transfer(
       @Valid @RequestBody TransferRequestDTO transferRequestDTO,
       @RequestHeader("Idempotency-Key") String idempotencyKey) {
