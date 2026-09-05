@@ -13,11 +13,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8110/realms/banktransferidempotency/protocol/openid-connect/certs
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: http://localhost:8110/realms/banktransferidempotency/protocol/openid-connect/certs
 
 server:
   port: 8081
+logging:
+  level:
+    org.springframework.security: trace
